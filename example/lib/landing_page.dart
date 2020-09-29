@@ -36,14 +36,6 @@ class _LandingPageState extends State<LandingPage> {
               _buildGoogleUnlinkButton(),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildKakaoLinkButton(),
-              SizedBox(width: 10),
-              _buildKakaoUnlinkButton(),
-            ],
-          ),
           Text("May take some time linking account for Kakao if the cloud server is on cold start"),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -140,33 +132,6 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Widget _buildKakaoLinkButton() {
-    return RaisedButton(
-      child: Text("Link with Kakao"),
-      onPressed: () async {
-        try {
-          await FirebaseAuthProvider.instance.linkCurrentUserWith(FirebaseKakaoAuthAPI());
-          setState(() {});
-        } catch (e) {
-          print(e);
-        }
-      },
-    );
-  }
-
-  Widget _buildKakaoUnlinkButton() {
-    return RaisedButton(
-      child: Text("Unlink with Kakao"),
-      onPressed: () async {
-        try {
-          await FirebaseAuthProvider.instance.unlinkCurrentUserFrom(FirebaseKakaoAuthAPI());
-          setState(() {});
-        } catch (e) {
-          print(e);
-        }
-      },
-    );
-  }
 
   Widget _buildPhoneLinkButton() {
     final FirebasePhoneAuthAPI phoneAuthAPI = FirebasePhoneAuthAPI();

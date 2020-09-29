@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:kakao_flutter_sdk/auth.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +9,6 @@ import 'landing_page.dart';
 import 'user_credential_provider.dart';
 
 void main() {
-  KakaoContext.clientId = "YOUR_NATIVE_APP_KEY";
 
   runApp(MyApp());
 }

@@ -68,7 +68,6 @@ class _LoginPageState extends State<LoginPage> {
                       _phoneSignInButton(context),
                       _googleSignInButton(),
                       _facebookSignInButton(),
-                      _kakaoSignInButton(),
                     ]),
         ),
       ),
@@ -278,18 +277,6 @@ class _LoginPageState extends State<LoginPage> {
       child: Text("Sign in with Facebook"),
       onPressed: () {
         _performSignIn(FirebaseFacebookAuthAPI());
-      },
-    );
-  }
-
-  Widget _kakaoSignInButton() {
-    return RaisedButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Text("Sign in with Kakao"),
-      onPressed: () {
-        _performSignIn(FirebaseKakaoAuthAPI());
       },
     );
   }

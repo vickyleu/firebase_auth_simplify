@@ -77,12 +77,8 @@ class FirebaseAuthProvider {
       }
       // Custom providers (providerId == "custom")
       else {
-        if (userClaims['provider'] == "kakaocorp.com") {
-          api = FirebaseKakaoAuthAPI();
-        } else {
           // TBA. (eg. Link, Apple, etc..)
           api = null;
-        }
       }
       return api;
     } catch (e) {
